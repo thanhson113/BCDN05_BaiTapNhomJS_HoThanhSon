@@ -109,8 +109,8 @@ ion-icon {
 .header__number{
     position: absolute;
     top: 6px;
-    right: 113px;
-    padding: 1px 7px;
+    right: 67px;
+    padding: 0px 7px;
     background-color: var(--color-3);
     border-radius: 50%;
     color: var(--color-white);

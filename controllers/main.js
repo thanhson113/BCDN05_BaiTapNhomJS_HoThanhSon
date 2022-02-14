@@ -1,5 +1,5 @@
+var spService = new SanPhamServices();
 
-var spService = new ProductServices();
 var productList = [];
 function laySanPham() {
     spService.layDS()
@@ -16,7 +16,7 @@ laySanPham();
 
 function hienThiSanPham(productList) {
     var content = "";
-    var count = 0;
+
     productList.map(function (product) {
         content += `
         <div class="col-md-4">
@@ -28,7 +28,7 @@ function hienThiSanPham(productList) {
                 <div class="product__icon">
                     <i class="far fa-heart"></i>
                     <button>
-                        <i class="fa fa-shopping-bag" onclick="themGioHang('${product.name}')"></i>
+                        <i class="fa fa-shopping-bag" onclick="themGioHang('${product.id}')"></i>
                     </button><br>
                     <i class="fa fa-search"></i>
                     <i class="fa fa-random"></i>
@@ -54,7 +54,6 @@ function hienThiSanPham(productList) {
         </div>
     </div>
         `
-        count++;
     })
     document.querySelector('.product__row').innerHTML = content;
 }
@@ -79,7 +78,7 @@ function locSanPham() {
         document.querySelector('.product__btn.active').classList.remove('active');
         document.getElementById('product__samsung').classList.add("active");   
         productList.map(function (product) {
-            if (product.type == 'Samsung') {
+            if (product.type == 'samsung') {
                 productFill.push(product);
             }
         })
@@ -95,26 +94,25 @@ function locSanPham() {
 
 // Thêm sản phẩm vào giỏ hàng
 var cart = [];
-function themGioHang(productName) {
+function themGioHang(id) {
     var isItem = false;
     isItem = cart.some(function (item) {
-        return item.product.name == productName;
+        return item.product.id == id;
     })
     if (!isItem) {
         productList.map(function (item) {
-            if(item.name == productName) {
+            if(item.id == id) {
                  var cartItem = {
                     product: item,
                     quantity: 1,
                 };
                 cart.push(cartItem);
-                console.log(cart);
             }     
         });
        
     } else {
         cart.map(function (item) {
-            if (item.product.name == productName) {
+            if (item.product.id == id) {
                 item.quantity++;
             }
         });
@@ -124,49 +122,43 @@ function themGioHang(productName) {
     tongTien();
     setLocalStorage();
 }
+
 // In giỏ hàng ra màn hình
 function renderCart() {
     var content = '';
     cart.map(function (item) {
         content += `
         <tr>
-        <td>
-            <img src="${item.product.img}" alt="">
-        </td>
-        <td><p>${item.product.name}</p></td>
-        <td>
-            <div class="product__select">
-                <button class="product__button" onclick="changeQuantity('${item.product.name}','decrease')">
-                    <i class="fas fa-chevron-left"></i>
+            <td>
+                <img src="${item.product.img}" alt="">
+            </td>
+            <td><p>${item.product.name}</p></td>
+            <td>
+                <div class="product__select">
+                    <button class="product__button" onclick="changeQuantity('${item.product.id}','decrease')">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <p>${item.quantity}</p>
+                    <button class="product__button" onclick="changeQuantity('${item.product.id}','increase')">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </td>
+            <td> <p>${item.product.price}</p></td>
+            <td>
+                <button class="product__button" onclick ="xoaSanPham('${item.product.id}')">
+                <i class="fas fa-times"></i>
                 </button>
-                <p>${item.quantity}</p>
-                <button class="product__button" onclick="changeQuantity('${item.product.name}','increase')">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </td>
-        <td> <p>${item.product.price}</p></td>
-        <td>
-            <button class="product__button" onclick ="xoaSanPham('${item.product.name}')">
-            <i class="fas fa-times"></i>
-            </button>
-        </td>
-    </tr>
-   
-    
-
-`
+            </td>
+        </tr>
+    `
     })
-    
 
-    // document.querySelector('#product__modal .modal-body').innerHTML = content;
-   
-    // })
     if(cart.length == 0){
         document.getElementById('product__table').style.display = 'none';
         document.querySelector('#product__modal .modal-footer').style.display = 'none'
         document.querySelector('.product__total').style.display = 'none'
-        
+        document.querySelector('.product__cart-img').style.display = 'block';
     }else{
         document.getElementById('product__table').style.display = 'table';
         document.querySelector('#product__modal .modal-footer').style.display = 'flex'
@@ -178,9 +170,9 @@ function renderCart() {
 }
 
 // Tăng giảm số lượng sản phẩm
-function changeQuantity(name, quantity) {
+function changeQuantity(id, quantity) {
     cart.map(function (item) {
-        if (item.product.name == name) {
+        if (item.product.id == id) {
             if (quantity == 'increase') {
                 item.quantity++;
 
@@ -194,6 +186,7 @@ function changeQuantity(name, quantity) {
     tongTien();
     setLocalStorage();
 }
+
 // Tính tổng tiền
 function tongTien() {
     var tongTien = 0;
@@ -205,8 +198,6 @@ function tongTien() {
     document.querySelector('.product__total span').innerHTML = `$${tongTien}`;
     document.querySelector('.header__number').innerHTML = tongSanPham;
     tongSanPham == 0 ? document.querySelector('.header__number').style.display = 'none': document.querySelector('.header__number').style.display = 'block';
-    
-
 }
 
 // set localstorage
@@ -223,27 +214,22 @@ function getLocalStorage() {
     }
 }
 getLocalStorage();
+
 // Thanh toán
 document.querySelector('.product__purchase').onclick = function () {
-    console.log(cart.length);
-    if(cart.length > 0){
-        cart = [];
-        setLocalStorage();
-        renderCart();
-        tongTien();
-        document.querySelector('.product__cart-img').style.display = 'block';
-        document.querySelector('.modal-header .close').click();
-        Swal.fire({
-            position: 'top-center',
-            icon: 'success',
-            title: 'Payment success',
-            showConfirmButton: false,
-            timer: 1500
-        })
-    }else{
-        
-    }
-    
+    cart = [];
+    setLocalStorage();
+    renderCart();
+    tongTien();
+    document.querySelector('.product__cart-img').style.display = 'block';
+    document.querySelector('.modal-header .close').click();
+    Swal.fire({
+        position: 'top-center',
+        icon: 'success',
+        title: 'Payment success',
+        showConfirmButton: false,
+        timer: 1500
+    })  
 }
 
 // Xóa hết giỏ hàng 
@@ -254,24 +240,33 @@ document.querySelector('.product__clear').onclick = function () {
         confirmButtonText: 'Yes',
 
     })
-        .then((result) => {
-            if (result.isConfirmed &&  cart != null) {
-                if(cart != null)
-                    cart = [];
-                    setLocalStorage();
-                    renderCart();
-                    tongTien();
-                    document.querySelector('.product__cart-img').style.display = 'block';
-                    Swal.fire({
-                        title: ' Delete success',
-                        showConfirmButton: false,
-                        icon: 'success',
-                        timer: 1500,
+    .then((result) => {
+        if (result.isConfirmed) {
+            cart = [];
+                setLocalStorage();
+                renderCart();
+                tongTien();
+                document.querySelector('.product__cart-img').style.display = 'block';
+                Swal.fire({
+                    title: ' Delete success',
+                    showConfirmButton: false,
+                    icon: 'success',
+                    timer: 1500,
 
-                    })
-            }
-        })
-   
+                })   
+        }
+    })
+}
+
+// Tìm vị trí
+function timViTri(id){
+    var viTri = -1;
+    cart.map(function (item,index){
+        if(item.product.id === id){
+            viTri = index;
+        }
+    })
+    return viTri;
 }
 
 // Xóa sản phẩm
@@ -284,12 +279,5 @@ function xoaSanPham(name) {
     renderCart();
     tongTien();
 }
-function timViTri(name){
-    var viTri = -1;
-    cart.map(function (item,index){
-        if(item.product.name === name){
-            viTri = index;
-        }
-    })
-    return viTri;
-}
+
+

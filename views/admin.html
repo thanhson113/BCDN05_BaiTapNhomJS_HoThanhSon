@@ -1,0 +1,365 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Admin HandPhone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
+    <meta content="Themesbrand" name="author">
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="../assets/img/favicon.ico">
+    <!-- Bootstrap Css -->
+    <link href="../assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css">
+    <!-- Icons Css -->
+    <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <!-- App Css-->
+    <link href="../assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css">
+
+</head>
+
+<body data-sidebar="dark">
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex align-items-center">
+                    <div class="navbar-brand-box">
+                        <a href="index.html" class="logo">
+                            <span class="logo-sm">
+                                <img src="../assets/img/logo.jpg" alt="" height="60" width="70">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="../assets/img/logo.jpg" alt="" height="110">
+                            </span>
+                        </a>
+                    </div>
+                    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect"
+                        id="vertical-menu-btn">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                    <form class="app-search d-none d-lg-block">
+                        <div class="position-relative">
+                            <input id="inputTK" type="text" class="form-control" placeholder="Search..."
+                                aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="d-flex">
+                    <div class="dropdown d-inline-block d-lg-none ml-2">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            id="page-header-search-dropdown" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="mdi mdi-magnify"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
+                            aria-labelledby="page-header-search-dropdown">
+                            <form class="p-3">
+                                <div class="form-group m-0">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search ..."
+                                            aria-label="Recipient's username">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="submit"><i
+                                                    class="mdi mdi-magnify"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="dropdown d-none d-lg-inline-block ml-1">
+                        <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
+                            <i class="bx bx-fullscreen"></i>
+                        </button>
+                    </div>
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="bx bx-bell bx-tada"></i>
+                            <span class="badge badge-danger badge-pill">3</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
+                            aria-labelledby="page-header-notifications-dropdown">
+                            <div class="p-3">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h6 class="m-0"> Notifications </h6>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="#!" class="small"> View All</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-simplebar="" style="max-height: 230px;">
+                                <a href="" class="text-reset notification-item">
+                                    <div class="media">
+                                        <div class="avatar-xs mr-3">
+                                            <span class="avatar-title bg-primary rounded-circle font-size-16">
+                                                <i class="bx bx-cart"></i>
+                                            </span>
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="mt-0 mb-1">Your order is placed</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1">If several languages coalesce the grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 3 min ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p-2 border-top">
+                                <a class="btn btn-sm btn-link font-size-14 btn-block text-center"
+                                    href="javascript:void(0)">
+                                    <i class="mdi mdi-arrow-right-circle mr-1"></i> View More..
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="rounded-circle header-profile-user" src="../assets/img/user.jpg"
+                                alt="Header Avatar">
+                            <span class="d-none d-xl-inline-block ml-1">Luong Ngoc</span>
+                            <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle mr-1"></i>
+                                Profile</a>
+                            <a class="dropdown-item" href="#"><i
+                                    class="bx bx-wallet font-size-16 align-middle mr-1"></i> My Wallet</a>
+                            <a class="dropdown-item d-block" href="#"><span
+                                    class="badge badge-success float-right">11</span><i
+                                    class="bx bx-wrench font-size-16 align-middle mr-1"></i> Settings</a>
+                            <a class="dropdown-item" href="#"><i
+                                    class="bx bx-lock-open font-size-16 align-middle mr-1"></i> Lock screen</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="#"><i
+                                    class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> Logout</a>
+                        </div>
+                    </div>
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
+                            <i class="bx bx-cog bx-spin"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <div class="vertical-menu">
+            <div data-simplebar="" class="h-100">
+                <div id="sidebar-menu">
+                    <ul class="metismenu list-unstyled" id="side-menu">
+                        <li class="menu-title">Menu</li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="bx bx-store"></i><span
+                                    class="badge badge-pill badge-info float-right">03</span>
+                                <span>Ecommerce</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="index.html">Products</a></li>
+                                <li><a href="#">Customers</a></li>
+                                <li><a href="#">Shops</a></li>
+                                <li><a href="#">Checkouts</a></li>
+                                <li><a href="#">Orders</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class=" waves-effect">
+                                <i class="bx bx-chat"></i>
+                                <span class="badge badge-pill badge-success float-right">New</span>
+                                <span>Chat</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="bx bx-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="#">Inbox</a></li>
+                                <li><a href="#">Read Email</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="bx bxs-user-detail"></i>
+                                <span>Contacts</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="#">User Grid</a></li>
+                                <li><a href="#">User List</a></li>
+                                <li><a href="#">Profile</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="bx bx-user-circle"></i>
+                                <span>Authentication</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="#">Login</a></li>
+                                <li><a href="#">Register</a></li>
+                                <li><a href="#">Recover Password</a></li>
+                                <li><a href="#">Lock Screen</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="container">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#DanhSachSP" role="tab" data-toggle="tab"></a>
+                    </li>
+                </ul>
+                <br />
+                <div class="table-responsive">
+                    <div class="table-wrapper">
+                        <div class="table-title">
+                            <div class="row">
+
+                                <div class="col-sm-5">
+                                    <button id="btnThemSP" class="btn btn-success" data-toggle="modal"
+                                        data-target="#myModal">
+                                        <i class="material-icons">&#xE147;</i>
+                                        Create a new product
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Image</th>
+                                <th>Type</th>
+                                <th>Actions</th>
+                            </thead>
+                            <tbody id="tblDanhSachSP"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h4 class="modal-title">HandPhone</h4>
+                                <button type="button" class="close" data-dismiss="modal">
+                                    &times;
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="" id="form__add">
+                                    <div class="form-group">
+                                        <label for="name">Product name:</label>
+                                        <input id="name" class="form-control" placeholder="Enter product name" />
+                                        <span class="sp-thongbao" id="tbname"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="price">Product price:</label>
+                                        <input id="price" class="form-control" placeholder="Enter product price" />
+                                        <span class="sp-thongbao" id="tbprice"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="size">Product screen size:</label>
+                                        <input id="size" class="form-control" placeholder="Enter product screen size" />
+                                        <span class="sp-thongbao" id="tbsize"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="back">Product back camera:</label>
+                                        <input id="back" class="form-control" placeholder="Enter product back camera" />
+                                        <span class="sp-thongbao" id="tbback"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="front">Product front camera:</label>
+                                        <input id="front" class="form-control"
+                                            placeholder="Enter product front camera" />
+                                        <span class="sp-thongbao" id="tbfront"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="img">Product image:</label>
+                                        <input id="img" class="form-control" placeholder="Enter product image" />
+                                        <span class="sp-thongbao" id="tbimg"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="desc">Product description:</label>
+                                        <textarea class="form-control" id="desc" rows="3"
+                                            placeholder="Enter product description"></textarea>
+                                        <span class="sp-thongbao" id="tbdesc"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="type">Product type:</label>
+                                        <textarea class="form-control" id="type" rows="3"
+                                            placeholder="Enter product type"></textarea>
+                                        <span class="sp-thongbao" id="tbtype"></span>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="container"></div>
+            <style>
+                #container {
+                    min-width: 310px;
+                    max-width: 800px;
+                    height: 400px;
+                    margin: 0 auto;
+                }
+            </style>
+
+        </div>
+    </div>
+
+    <div class="right-bar">
+        <div data-simplebar="" class="h-100">
+            <div class="rightbar-title px-3 py-4">
+                <a href="javascript:void(0);" class="right-bar-toggle float-right">
+                    <i class="mdi mdi-close noti-icon"></i>
+                </a>
+                <h5 class="m-0">Settings</h5>
+            </div>
+            <hr class="mt-0">
+        </div>
+    </div>
+
+
+    <div class="rightbar-overlay"></div
+
+    <!-- JAVASCRIPT -->
+    <script src="../assets/libs/jquery/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/libs/metismenu/metisMenu.min.js"></script>
+    <script src="../assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="../assets/libs/node-waves/waves.min.js"></script>
+    <script src="../assets/libs/apexcharts/apexcharts.min.js"></script>
+    <script src="../assets/js/pages/dashboard.init.js"></script>
+    <!-- AXIOS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../models/SanPham.js"></script>
+    <script src="../services/SanPhamServices.js"></script>
+    <script src="../services/Validation.js"></script>
+    <script src="../controllers/admin.js"></script>
+    <!-- App js -->
+    <script src="../assets/js/app.js"></script>
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-function Product(name,price,screen,backCamera,frontCamera,img,desc,type) {
+function SanPham(name,price,screen,backCamera,frontCamera,img,desc,type) {
     this.name = name;
     this.price = price;
     this.screen = screen;
