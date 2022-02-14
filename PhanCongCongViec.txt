@@ -1,0 +1,3 @@
+Sơn: Làm giao diện trang chủ. Làm câu 1 đến câu 6 JS trang chủ
+Đat: Làm câu 7 đến câu 13 JS trang chủ
+Ngọc: Làm phần admin 
