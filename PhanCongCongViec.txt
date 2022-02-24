@@ -1,3 +1,10 @@
 Sơn: Làm giao diện trang chủ. Làm câu 1 đến câu 6 JS trang chủ
 Đat: Làm câu 7 đến câu 13 JS trang chủ
 Ngọc: Làm phần admin 
+
+Link GitHub:
+Trang chủ: https://thanhson113.github.io/BCDN05_BaiTapNhomJS_HoThanhSon
+Admin: https://thanhson113.github.io/BCDN05_BaiTapNhomJS_HoThanhSon/views/admin.html
+
+link video:https://drive.google.com/file/d/1-bVaD_Mapy1qb3_H7PQsm2jVXruHED-N/view?usp=sharing
+
